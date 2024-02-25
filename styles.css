@@ -1053,7 +1053,8 @@ img {
 
 img {
     display: inline-block;
-    max-width: 100%;
+    max-width: 100px;
+    height: 60px;
     height: auto;
 }
 
