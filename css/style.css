@@ -495,7 +495,11 @@ img {
     height: 4px;
     background-color: #222222;
 }
-
+.logo img {
+    width: 250px;
+    height: 150px;
+    
+}
 .btn-style-two .txt {
     position: relative;
     z-index: 1;
