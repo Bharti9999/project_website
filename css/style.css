@@ -1106,8 +1106,7 @@ img {
 
 img {
     display: inline-block;
-    max-width: 100px;
-    height: 60px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -3972,7 +3971,7 @@ img {
 
 .projects-section .top-divider {
     position: relative;
-    width: 4px;
+    width: 2px;
     height: 70px;
     left: 50%;
     margin-left: -1px;
