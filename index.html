@@ -5,6 +5,13 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <!-- <link href="./css/style.css" rel="stylesheet"> -->
   <link href="responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery.bootstrap-touchspin.css">
+  <link rel="stylesheet" href="css/custom-animate.css">
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
   <link
       href="https://fonts.googleapis.com/css2?family=Niramit:wght@200;400;500;600;700&amp;family=Saira:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
       rel="stylesheet">
@@ -513,6 +520,16 @@
 <script src="js/jquery-ui.js"></script>
 <script src="js/script.js"></script>
 <script src="js/color-settings.js"></script>
+<script>
+  function toggleDropdown(id) {
+    var dropdown = document.getElementById(id);
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+      dropdown.style.display = 'block';
+    } else {
+      dropdown.style.display = 'none';
+    }
+  }
+</script>
 </body>
 
 </html>
