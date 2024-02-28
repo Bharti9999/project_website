@@ -1750,8 +1750,18 @@ img {
     -o-transition: all 500ms ease;
 }
 
-.main-menu .navigation>li.dropdown>a {}
+.dropdown ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background:#7174d3;
+    display: none;
+}
+.dropdown ul li:hover ul{
+    display:block;
 
+
+}
 .sticky-header .main-menu .navigation>li {
     position: relative;
     margin-left: 30px;
