@@ -130,23 +130,75 @@ text-transform: bold;
 }
 
 
+.overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .popup h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .popup p {
+            color: #555;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .popup button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
 
 
 
-    <!-- Pop-up script -->
     <script>
-        function showPopup() {
-            document.getElementById('overlay').style.display = 'flex';
-        }
+      function hidePopup() {
+          $("#overlay").hide();
+      }
+  
+      $(document).on('click', '#overlay button', function () {
+          hidePopup();
+      });
+  
+      $(document).on('click', '#overlay', function (e) {
+          if (e.target === this) {
+              hidePopup();
+          }
+      });
+  
+      $(document).ready(function () {
+          showPopup();
+      });
+  </script>
 
-        function hidePopup() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        window.onload = showPopup;
-    </script>
 
 </head>
 
