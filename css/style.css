@@ -1303,7 +1303,7 @@ img {
 .header-top-two .top-right .social-box li a {
     position: relative;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 26px;
     -webkit-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
     -o-transition: all 300ms ease;
@@ -4861,7 +4861,7 @@ img {
 
 .main-footer .logo-widget .social-box li a {
     position: relative;
-    font-size: 16px;
+    font-size: 27px;
     color: #ffffff;
     transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
@@ -4886,7 +4886,7 @@ img {
 .main-footer .list-link li a {
     position: relative;
     color: #ffffff;
-    font-size: 13px;
+    font-size: 20px;
     transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
