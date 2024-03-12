@@ -130,7 +130,63 @@ text-transform: bold;
 }
 
 
+    
+#customPopup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border: 1px solid #3498db;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #customPopup p {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        #customPopup a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        #customPopup button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
     </style>
+
+
+   
+    <!-- Provided pop-up script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var popup = document.createElement("div");
+            popup.id = "customPopup";
+            popup.innerHTML = `
+                <p>Welcome!</p>
+                <p>Contact us:</p>
+                <p>Email: <a href="mailto:prdesign768@gmail.com">prdesign768@gmail.com</a></p>
+                <p>Number: +91-6301819456</p>
+                <button onclick="closePopup()">Close</button>
+            `;
+            document.body.appendChild(popup);
+            window.closePopup = function() {
+                document.body.removeChild(popup);
+            };
+        });
+    </script>
   
 </head>
 
@@ -159,9 +215,9 @@ text-transform: bold;
                 <div class="top-right pull-right">
                   <!-- Social Box -->
                   <ul class="social-box">
-                    <!-- <li><a href="https://www.facebook.com/TraficCloudLLP" target=_blank class="fa fa-facebook-f"></a></li>
-                    <li><a href="https://twitter.com/CloudTrafic" target=_blank class="fa fa-twitter"></a></li>
-                    <li><a href="https://in.pinterest.com/traficcloud/" target=_blank class="fa fa-pinterest-p"></a></li> -->
+                    <li><a href="https://www.facebook.com/profile.php?id=61556716479946" target=_blank class="fa fa-facebook-f"></a></li>
+                    <!-- <li><a href="https://twitter.com/ target=_blank class="fa fa-twitter"></a></li>
+                    <li><a href="https://in.pinterest.com//" target=_blank class="fa fa-pinterest-p"></a></li> -->
                     <li><a href="https://www.instagram.com/prdesigndigital?igsh=bGQ3dm11dDIwaGc1/" target=_blank class="fa fa-instagram"></a></li>
                   </ul>
                 </div>
@@ -208,14 +264,13 @@ text-transform: bold;
                         <div class="dropdown">
                           <button class="dropdown-btn">WEB SERVICES</button>
                           <div class="dropdown-content">
-                            <a href="#webdev.html">Website Designing</a>
+                            <a href="webdev.html">Website Designing</a>
                             <a href="webdev.html">Web Development</a>
-                            <a href="#graphic-design-page.html">Graphic Designing</a>
-                            <a href="#Mobile-Application.html">Mobile Application</a>
-                            <a href="#C:\Users\manish tiwari\Desktop\collbe\project_website\ERP-Development.html">ERP Development</a>
-                            <a href="#C:\Users\manish tiwari\Desktop\collbe\project_website\CRM-Development.html">CRM Development</a>
-                            <a href="#E-Commerce.html">E-Commerce</a>
-                            <a href="#API-Services.html">API Services</a>
+                            <a href="graphic-design-page.html">Graphic Designing</a>
+                            <a href="Mobile-Application.html">Mobile Application</a>
+                            <a href="CRM-Development.html">CRM Development</a>
+                            <a href="E-Commerce.html">E-Commerce</a>
+                            <a href="API-Services.html">API Services</a>
         
                           </div>
                         </div>
@@ -223,13 +278,13 @@ text-transform: bold;
                             <button class="dropdown-btn1">DIGITAL MARKETING</button>
                             <div class="dropdown-content1">
                           
-                              <a href="#SEO.html">SEO</a>
-                              <a href="#SMO.html">SMO</a>
-                              <a href="#SMS-Marketings.html">SMS Marketing</a>
-                              <a href="#Whatsapp-Marketing.html">Whatsapp Marketing</a>
-                              <a href="#Chatbot-Service.html">Chatbot Services</a>
-                              <a href="#SMS-Marketings.html">Email Marketing</a>
-                              <a href="#lead-genaration.html">Lead Generation</a>
+                              <a href="SEO.html">SEO</a>
+                              <a href="SMO.html">SMO</a>
+                              <a href="SMS-Marketings.html">SMS Marketing</a>
+                              <a href="Whatsapp-Marketing.html">Whatsapp Marketing</a>
+                              <a href="Chatbot-Service.html">Chatbot Services</a>
+                              <a href="email-marketing.html">Email Marketing</a>
+                              <a href="lead-generation.html">Lead Generation</a>
                             </ul>
                           </div>
                         </div>
@@ -520,10 +575,10 @@ text-transform: bold;
                     <div class="text">Welcome to our Website Designing And Digital Marketing PRDesigning.</div>
  <!-- Social Box -->
  <ul class="social-box">
-  <!-- <li><a href="https://www.facebook.com/TraficCloudLLP" target=_blank class="fa fa-facebook-f"></a>
+   <li><a href="https://www.facebook.com/profile.php?id=61556716479946" target=_blank class="fa fa-facebook-f"></a>
   </li>
-  <li><a href="https://twitter.com/CloudTrafic" target=_blank class="fa fa-twitter"></a></li>
-  <li><a href="https://in.pinterest.com/traficcloud/" target=_blank class="fa fa-pinterest-p"></a>
+ <!-- <li><a href="https://twitter.com/" target=_blank class="fa fa-twitter"></a></li>
+  <li><a href="https://in.pinterest.com/" target=_blank class="fa fa-pinterest-p"></a>
   </li> -->
   <li><a href="https://www.instagram.com/prdesigndigital?igsh=bGQ3dm11dDIwaGc1/" target=_blank class="fa fa-instagram"></a>
   </li>
