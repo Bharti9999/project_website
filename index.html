@@ -310,6 +310,7 @@ text-transform: bold;
               <div class="inner-container clearfix">
     
                 <div class="pull-left logo-box">
+                  <div class="logo"><a href="index.html"><img src="logo1-removebg-preview.png" alt="logo" title=""></a></div>
                   <div class="logo"><a href="./"><img src="images/logo11.jpg" alt="logo" title=""></a></div>
                 </div>
                 <div class="nav-outer pull-right clearfix">
@@ -581,13 +582,44 @@ text-transform: bold;
     <!-- Main Footer -->
     <section class="contact-form-section">
       <div class="auto-container">
-        <!-- Sec Title -->
-        <div class="sec-title centered">
-          <h2><span>Contact</span> us </h2>
+          <!-- Sec Title -->
+          <div class="sec-title centered">
+              <h2><span>Contact</span> us </h2>
 
-        </div>
-        <div class="inner-container">
+          </div>
+          <div class="inner-container">
 
+              <!-- Contact Form -->
+              <div class="contact-form">
+                  <form method="post" action="https://formspree.io/f/xkndzknj" id="contact-form" >
+                      <div class="row clearfix">
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                              <input type="text" name="name" id="form_name" value="" placeholder="Your Name" required>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                              <input type="email" name="email" id="form_email" value="" placeholder="Your Email" required>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                              <input type="text" name="subject" id="form_subject" value="" placeholder="Subject" required>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                              <input type="text" name="phone" id="form_phone" value="" placeholder="Phone" required>
+                          </div>
+
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                              <textarea name="message" id="form_message" placeholder="Your Question"></textarea>
+                          </div>
+
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12 text-center">
+                              <button type="button" class="theme-btn btn-style-three bsendmail"><span class="txt">Contact us</span></button>
+                          </div>
+                          <div class="successMsgform"></div>
+
+                      </div>
           <!-- Contact Form -->
           <section class="contact-form-section">
             <div class="auto-container">
@@ -626,20 +658,16 @@ text-transform: bold;
                       <div class="successMsgform"></div>
                     </div>
                   </form>
-                </div>
               </div>
-            </div>
-          </section>
-          
-          <!-- End Contact Form -->
-          
-          <h1>Visitor Counter</h1>
-          <p>Total Visitors - <span id="totalVisitors">8234</span></p>
-          <p>Current Visitors - <span id="currentVisitors">2678</span></p>
-
-        </div>
+              <!-- End Contact Form -->
+              <h1>Visitor Counter</h1>
+              <p>Total Visitors - <span id="totalVisitors">8234</span></p>
+              <p>Current Visitors - <span id="currentVisitors">2678</span></p>
+          </div>
       </div>
-    </section>
+  </section>
+          
+  
 
     <footer class="main-footer" style="background-image: url(images/background/pattern-10.png)">
       <div class="auto-container">
