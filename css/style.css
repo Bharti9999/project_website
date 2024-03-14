@@ -4987,7 +4987,7 @@ img {
 
 .newsletter-form .form-group textarea::-webkit-input-placeholder,
 .newsletter-form .form-group input::-webkit-input-placeholder {
-    color: #ffffff;
+    color: #200404;
 }
 
 .newsletter-form .form-group input:focus {
@@ -4997,15 +4997,16 @@ img {
 .newsletter-form .form-group input[type="submit"],
 .newsletter-form .form-group button {
     position: absolute;
-    width: 40px;
+    width: 70px;
     height: 40px;
     right: 5px;
-    top: 5px;
+    top: -15px;
     bottom: 5px;
     color: #ffaa17;
     cursor: pointer;
     background: none;
     display: inline-block;
+    z-index: 3;
 }
 
 /* Newsletter Form */
