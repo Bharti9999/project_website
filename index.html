@@ -185,6 +185,95 @@ text-transform: bold;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
+    .container {
+   text-align: center;
+   border: 5px solid green;
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+
+@keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rollIn {
+      0% { transform: translateY(-50px) rotateX(-90deg); opacity: 0; }
+      100% { transform: translateY(0) rotateX(0); opacity: 1; }
+    }
+
+    .animated-number {
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    .running-number {
+      display: inline-block;
+      animation: rollIn 1s ease-out forwards;
+    }
+
+    /* Button Styles */
+    
+  .contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 800px;
+    margin-bottom: 100px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  
+  .contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #000;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+  }
+  
+  .contact-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+  
+  .contact-btn span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Text Animation */
+  .contact-btn span::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  .contact-btn:hover span::before {
+    clip: rect(0, 100%, 100%, 0);
+    opacity: 1;
+  }
     </style>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -208,7 +297,8 @@ text-transform: bold;
         });
 
 
-       let totalVisitors = 8234;
+       // Initialize variables
+    let totalVisitors = 8234;
     let currentVisitors = 2678;
 
     // Function to update visitors and display on the website
@@ -235,32 +325,34 @@ text-transform: bold;
 
     // Update the visitors every 5 seconds for continuous animation (adjust as needed)
     setInterval(updateVisitors, 5000);
-    //email
-    $(document).ready(function () {
-    $("#contact-form").submit(function (e) {
-      e.preventDefault();
 
-      var formData = $(this).serialize();
-      var formUrl = $(this).attr("action");
+    document.addEventListener("DOMContentLoaded", function() {
+      const happyCustomersElement = document.getElementById("happyCustomers");
+      const totalProjectsElement = document.getElementById("totalProjects");
 
-      $.ajax({
-        type: "POST",
-        url: formUrl,
-        data: formData,
-        dataType: "json",
-        success: function (response) {
-          if (response.success) {
-            $(".successMsgform").html("Email sent successfully!");
-            // Add any additional actions or messages on success
-          } else {
-            $(".successMsgform").html("Error sending email. Please try again.");
-            // Handle errors or display appropriate message
-          }
-        },
-      });
+      let happyCustomers = 2900;
+      let totalProjects = 2889;
+
+      // Function to update the numbers every day
+      function updateNumbers() {
+        happyCustomers += 2;
+        totalProjects += 2;
+        happyCustomersElement.innerHTML = `<span class="animated-number running-number">Happy Customers: ${happyCustomers}+</span>`;
+        totalProjectsElement.innerHTML = `<span class="animated-number running-number">Total Projects Done: ${totalProjects}+</span>`;
+      }
+
+      // Update numbers initially
+      updateNumbers();
+
+      // Update numbers every 24 hours (86400000 milliseconds = 24 hours)
+      setInterval(updateNumbers, 86400000);
+
     });
-  });
-    </script>
+  </script>
+
+
+
+   
   
 </head>
 
@@ -289,10 +381,9 @@ text-transform: bold;
                 <div class="top-right pull-right">
                   <!-- Social Box -->
                   <ul class="social-box">
-                    <li><a href="https://www.facebook.com/profile.php?id=61556716479946" target=_blank class="fa fa-facebook-f"></a></li>
-                    <!-- <li><a href="https://twitter.com/ target=_blank class="fa fa-twitter"></a></li>
-                    <li><a href="https://in.pinterest.com//" target=_blank class="fa fa-pinterest-p"></a></li> -->
-                    <li><a href="https://www.instagram.com/prdesigndigital?igsh=bGQ3dm11dDIwaGc1/" target=_blank class="fa fa-instagram"></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61556716479946" target= "_blank" class="fa fa-facebook-f"></a></li>
+                    
+                    <li><a href="https://www.instagram.com/prdesigndigital?igsh=bGQ3dm11dDIwaGc1/" target= "_blank" class="fa fa-instagram"></a></li>
                   </ul>
                 </div>
               </div>
@@ -310,8 +401,7 @@ text-transform: bold;
               <div class="inner-container clearfix">
     
                 <div class="pull-left logo-box">
-                  <div class="logo"><a href="index.html"></a></div>
-                  <div class="logo"><a href="./"><img src="images/logo11.jpg" alt="logo" title=""></a></div>
+                  <div class="logo"><a href="index.html"><img src="logo1-removebg-preview.png" alt="logo" title=""></a></div>
                 </div>
                 <div class="nav-outer pull-right clearfix">
                   <div class="mobile-nav-toggler"><span class="icon flaticon-menu-3"></span></div>
@@ -578,19 +668,16 @@ text-transform: bold;
       </div>
     </section><br><br>
 
-
+    <a href="/contact-us.html" class="contact-btn" data-text="Contact Us"><span>Contact Us</span></a>
     <!-- Main Footer -->
     <section class="contact-form-section">
       <div class="auto-container">
           <!-- Sec Title -->
-          <div class="sec-title centered">
-              <h2><span>Contact</span> us </h2>
-
-          </div>
+          
           <div class="inner-container">
-
+            
               <!-- Contact Form -->
-              <div class="contact-form">
+             <!--<div class="contact-form">
                   <form method="post" action="https://formspree.io/f/xkndzknj" id="contact-form" >
                       <div class="row clearfix">
 
@@ -620,49 +707,19 @@ text-transform: bold;
                           <div class="successMsgform"></div>
 
                       </div>
-          <!-- Contact Form -->
-          <section class="contact-form-section">
-            <div class="auto-container">
-              <div class="sec-title centered">
-                
-              </div>
-              <div class="inner-container">
-                <!-- Contact Form -->
-                <div class="contact-form" id="contact-form">
-                  <form method="post" action="https://formspree.io/f/xkndzknj" id="contact-form">
-                    <div class="row clearfix">
-                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                        <input type="text" name="name" id="form_name" value="" placeholder="Your Name" required>
-                      </div>
-        
-                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                        <input type="email" name="email" id="form_email" value="" placeholder="Your Email" required>
-                      </div>
-        
-                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                        <input type="text" name="subject" id="form_subject" value="" placeholder="Subject" required>
-                      </div>
-        
-                      <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                        <input type="text" name="phone" id="form_phone" value="" placeholder="Phone" required>
-                      </div>
-        
-                      <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                        <textarea name="message" id="form_message" placeholder="Your Question"></textarea>
-                      </div>
-        
-                      <div class="form-group col-lg-12 col-md-12 col-sm-12 text-center">
-                        <button type="submit" class="theme-btn btn-style-three"><span class="txt">Contact us</span></button>
-                      </div>
-        
-                      <div class="successMsgform"></div>
-                    </div>
                   </form>
-              </div>
+              </div>-->
               <!-- End Contact Form -->
-              <h1>Visitor Counter</h1>
+              <div class="container">
+                <h1>Project</h1>
+                <p id="happyCustomers"></p>
+                <p id="totalProjects"></p>
+                <h1>Visitor Counter</h1>
               <p>Total Visitors - <span id="totalVisitors">8234</span></p>
               <p>Current Visitors - <span id="currentVisitors">2678</span></p>
+              </div>
+
+              
           </div>
       </div>
   </section>

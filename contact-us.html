@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<style>
+  /* Styles for the contact form */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .contact-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 400px;
+  }
+  .contact-form:hover {
+    transform: translateY(-5px);
+  }
+  .form-input {
+    margin-bottom: 20px;
+  }
+  .form-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .form-input input,
+  .form-input textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  .form-input textarea {
+    height: 100px;
+  }
+  .form-input input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .form-input input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .success-message {
+    color: #28a745;
+    margin-top: 10px;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form class="contact-form" id="contact-form" action="https://formspree.io/f/xkndzknj" method="POST">
+    <div class="form-input">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-input">
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+    </div>
+    <div class="form-input">
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+    </div>
+    <div class="form-input">
+      <input type="submit" value="Send">
+    </div>
+  </form>
+</div>
+
+<script>
+  // Form submission handling
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Form validation
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    // Form submission
+    var form = event.target;
+    var formData = new FormData(form);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset(); // Clear form fields on successful submission
+        var successMessage = document.createElement('p');
+        successMessage.textContent = 'Thank you, ' + name + '! Your message has been sent.';
+        successMessage.classList.add('success-message');
+        form.insertAdjacentElement('afterend', successMessage);
+      } else {
+        alert("There was an error. Please try again later.");
+      }
+    };
+    xhr.send(formData);
+  });
+</script>
+
+</body>
+</html>
